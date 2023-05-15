@@ -10,7 +10,6 @@ crate-type = ["cdylib"]
 
 
 [features]
-default = ["lua53"]
 lua54 = ["tealr/mlua_lua54"]
 lua53 = ["tealr/mlua_lua53"]
 lua52 = ["tealr/mlua_lua52"]
