@@ -18,7 +18,7 @@ local client = interactsh.client() -- This will choose a random Interactsh serve
 local client = interactsh.client{server = "myserver.local", timeout = 5} -- Use this to specify a custom server and timeout.
 
  -- Refreshes the page to see if there are any new requests.
-for k,v in paris(client:poll()) do 
+for k,v in pairs(client:poll()) do 
     print(k,v)
 end
 client:host() -- Returns the OAST host.
