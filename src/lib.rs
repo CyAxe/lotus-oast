@@ -20,6 +20,7 @@ fn convert_entry_table<'lua>(lua: &'lua Lua, log_entry: &ParsedLogEntry) -> LuaR
             remote_address,
             timestamp,
         } => {
+            results_table.set("req_type", "http").unwrap();
             results_table
                 .set("unique_id", unique_id.to_string())
                 .unwrap();
@@ -46,6 +47,7 @@ fn convert_entry_table<'lua>(lua: &'lua Lua, log_entry: &ParsedLogEntry) -> LuaR
             remote_address,
             timestamp,
         } => {
+            results_table.set("req_type", "DNS").unwrap();
             results_table
                 .set("q_type", q_type.as_ref().unwrap().to_string())
                 .unwrap();
@@ -74,6 +76,7 @@ fn convert_entry_table<'lua>(lua: &'lua Lua, log_entry: &ParsedLogEntry) -> LuaR
             remote_address,
             timestamp,
         } => {
+            results_table.set("req_type", "LDAP").unwrap();
             results_table
                 .set("unique_id", unique_id.to_string())
                 .unwrap();
@@ -95,6 +98,7 @@ fn convert_entry_table<'lua>(lua: &'lua Lua, log_entry: &ParsedLogEntry) -> LuaR
             raw_request,
             timestamp,
         } => {
+            results_table.set("req_type", "SMB").unwrap();
             results_table
                 .set("raw_request", raw_request.to_string())
                 .unwrap();
@@ -107,6 +111,7 @@ fn convert_entry_table<'lua>(lua: &'lua Lua, log_entry: &ParsedLogEntry) -> LuaR
             raw_request,
             timestamp,
         } => {
+            results_table.set("req_type", "FTP").unwrap();
             results_table
                 .set("raw_request", raw_request.to_string())
                 .unwrap();
@@ -125,6 +130,7 @@ fn convert_entry_table<'lua>(lua: &'lua Lua, log_entry: &ParsedLogEntry) -> LuaR
             remote_address,
             timestamp,
         } => {
+            results_table.set("req_type", "SMTP").unwrap();
             results_table
                 .set("unique_id", unique_id.to_string())
                 .unwrap();
