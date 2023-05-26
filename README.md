@@ -19,6 +19,8 @@ local client = interactsh.client{server = "myserver.local", timeout = 5} -- Use 
 
  -- Refreshes the page to see if there are any new requests.
 for k,v in pairs(client:poll()) do 
+    -- You can find the request type in `req_type` item,
+    -- client:poll()[0]["req_type"] -> ["HTTP","FTP","SMB","LDAP","DNS","SMTP"]
     print(k,v)
 end
 client:host() -- Returns the OAST host.
